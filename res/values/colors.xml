@@ -168,4 +168,6 @@
     <color name="palette_list_dark_mode_color_blue">#8AB4F8</color> <!-- Material Blue 300 -->
     <color name="palette_list_dark_mode_color_purple">#c58af9</color> <!-- Material Purple 300 -->
 
+   <!--Generic Circle for Horn's dashboard logo-->
+   <color name="homepage_horns_background">#9E9E9E</color>
 </resources>
