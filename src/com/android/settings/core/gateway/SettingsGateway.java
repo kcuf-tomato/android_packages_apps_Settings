@@ -138,6 +138,7 @@ import com.android.settings.wifi.calling.WifiCallingSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
 import com.kcuf.settings.KCUFSettings;
+import com.kcuf.settings.fragments.HeadsUpSettings;
 
 public class SettingsGateway {
 
@@ -263,7 +264,8 @@ public class SettingsGateway {
             DirectoryAccessDetails.class.getName(),
             ToggleBackupSettingFragment.class.getName(),
             PreviouslyConnectedDeviceDashboardFragment.class.getName(),
-            KCUFSettings.class.getName()
+            KCUFSettings.class.getName(),
+            HeadsUpSettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
