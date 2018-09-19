@@ -435,10 +435,6 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
     @Override
     public int getMetricsCategory() {
-<<<<<<< HEAD:src/com/android/settings/kcuf/AccentPicker.java
         return MetricsProto.MetricsEvent.KCUF_SETTINGS;
-=======
-        return MetricsProto.MetricsEvent.LIQUID;
->>>>>>> 92af4e0... Fruity pebbles [4/4]:src/com/android/settings/havoc/AccentPicker.java
     }
 }
