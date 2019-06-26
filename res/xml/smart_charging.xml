@@ -21,12 +21,19 @@
     android:key="smart_charging_screen"
     android:title="@string/smart_charging_title">
 
-    <com.ssos.support.preferences.SystemSettingSwitchPreference
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="smart_charging"
         android:title="@string/smart_charging_switch_title"
         android:defaultValue="false" />
 
-    <com.ssos.support.preferences.CustomSeekBarPreference
+    <com.stag.horns.support.preferences.SystemSettingSwitchPreference
+        android:key="smart_charging_reset_stats"
+        android:title="@string/smart_charging_reset_stats_title"
+        android:summary="@string/smart_charging_reset_stats_summary"
+        android:defaultValue="false"
+        android:dependency="smart_charging" />
+
+    <com.stag.horns.preferences.CustomSeekBarPreference
         android:key="smart_charging_level"
         android:title="@string/smart_charging_level_title"
         android:max="100"
@@ -35,7 +42,7 @@
         android:defaultValue="80"
         android:dependency="smart_charging" />
 
-    <com.ssos.support.preferences.CustomSeekBarPreference
+    <com.stag.horns.preferences.CustomSeekBarPreference
         android:key="smart_charging_resume_level"
         android:title="@string/smart_charging_resume_level_title"
         android:max="99"
