@@ -79,6 +79,12 @@
             settings:searchable="false"
             settings:controller="com.android.settings.gestures.DoubleTapScreenPreferenceController" />
 
+        <SwitchPreference
+            android:key="ambient_wake_gestures"
+            android:title="@string/ambient_wake_gestures_title"
+            android:summary="@string/ambient_wake_gestures_summary"
+            settings:controller="com.android.settings.display.AmbientWakeGesturesPreferenceController" />
+
         <Preference
             android:key="ambient_display_pick_up"
             android:title="@string/ambient_display_pickup_title"
