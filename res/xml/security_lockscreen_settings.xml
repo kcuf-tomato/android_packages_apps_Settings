@@ -85,6 +85,12 @@
             android:summary="@string/ambient_wake_gestures_summary"
             settings:controller="com.android.settings.display.AmbientWakeGesturesPreferenceController" />
 
+        <com.stag.horns.preferences.SecureSettingSwitchPreference
+            android:key="doze_on_charge"
+            android:title="@string/doze_on_charge_title"
+            android:summary="@string/doze_on_charge_summary"
+            android:defaultValue="false" />  
+
         <Preference
             android:key="ambient_display_pick_up"
             android:title="@string/ambient_display_pickup_title"

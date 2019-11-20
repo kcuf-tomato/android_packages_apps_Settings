@@ -207,4 +207,9 @@
     <!-- Ambient Wake gestures -->
     <string name="ambient_wake_gestures_title">Ambient wake gestures</string>
     <string name="ambient_wake_gestures_summary">Show Ambient Display instead of normal lockscreen on wake gestures</string>
+
+    <!-- AoD on charge -->
+    <string name="doze_on_charge_title">Always On when charging</string>
+    <string name="doze_on_charge_summary">Show Always On Ambient display when charging</string>
+
 </resources>
