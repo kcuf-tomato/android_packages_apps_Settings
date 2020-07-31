@@ -263,6 +263,16 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         }
         mBatteryTipPreferenceController.restoreInstanceState(icicle);
         updateBatteryTipFlag(icicle);
+ 
+        // Check availability of Battery Health
+        Preference mDesignedHealthPref = (Preference) findPreference(KEY_DESIGNED_BATTERY_CAPACITY);
+        Preference mCurrentHealthPref = (Preference) findPreference(KEY_CURRENT_BATTERY_CAPACITY);
+        Preference mCyclesHealthPref = (Preference) findPreference(KEY_BATTERY_CHARGE_CYCLES);
+        if (!getResources().getBoolean(R.bool.config_supportBatteryHealth)) {
+            getPreferenceScreen().removePreference(mDesignedHealthPref);
+            getPreferenceScreen().removePreference(mCurrentHealthPref);
+            getPreferenceScreen().removePreference(mCyclesHealthPref);
+        }
 
         // Check availability of Smart Charging
         Preference mSmartCharging = (Preference) findPreference("smart_charging_key");
