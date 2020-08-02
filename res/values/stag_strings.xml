@@ -350,4 +350,10 @@
     <string name="disable_fonts_installed_title">Font picker is unavailable to avoid conflicts with Substratum. Uninstall it if you wish to use the font picker.</string>
     <string name="font_picker_progress">Applying new font\u2026</string>
 
+    <!-- Battery categorisation -->
+    <string name="battery_saver_category_title">Battery Saver</string>
+    <string name="smart_charging_category_title">Smart Charging</string>
+    <string name="battery_info_category_title">Battery Health</string>
+    <string name="battery_usage_category_title">Battery Info</string>
+
 </resources>
