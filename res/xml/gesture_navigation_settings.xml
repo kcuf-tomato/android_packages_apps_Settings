@@ -53,6 +53,12 @@
             settings:textEnd="@string/back_height_high_label"/>
     </PreferenceCategory>
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="back_gesture_haptic"
+        android:title="@string/back_gesture_haptic_title"
+        android:summary="@string/back_gesture_haptic_summary"
+        android:defaultValue="false" />
+
     <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="show_back_arrow_gesture"
         android:title="@string/back_gesture_arrow_message"
