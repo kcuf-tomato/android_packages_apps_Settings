@@ -54,6 +54,8 @@ import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
 import com.android.settingslib.widget.LayoutPreference;
 
+import com.android.internal.util.stag.StagUtils;
+
 import java.util.List;
 
 /**
@@ -70,6 +72,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     private static final String KEY_SCREEN_USAGE = "screen_usage";
     private static final String KEY_TIME_SINCE_LAST_FULL_CHARGE = "last_full_charge";
+    private static final String KEY_BATTERY_TEMP = "battery_temp";
 
     @VisibleForTesting
     static final int BATTERY_INFO_LOADER = 1;
@@ -83,6 +86,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     PowerGaugePreference mScreenUsagePref;
     @VisibleForTesting
     PowerGaugePreference mLastFullChargePref;
+    @VisibleForTesting
+    PowerGaugePreference mBatteryTemp;
     @VisibleForTesting
     PowerUsageFeatureProvider mPowerFeatureProvider;
     @VisibleForTesting
@@ -98,6 +103,8 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     boolean mNeedUpdateBatteryTip;
     @VisibleForTesting
     BatteryTipPreferenceController mBatteryTipPreferenceController;
+
+    private boolean batteryTemp = false;
 
     @VisibleForTesting
     final ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
@@ -219,6 +226,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         mScreenUsagePref = (PowerGaugePreference) findPreference(KEY_SCREEN_USAGE);
         mLastFullChargePref = (PowerGaugePreference) findPreference(
                 KEY_TIME_SINCE_LAST_FULL_CHARGE);
+        mBatteryTemp = (PowerGaugePreference) findPreference(KEY_BATTERY_TEMP);
         mBatteryUtils = BatteryUtils.getInstance(getContext());
 
         restartBatteryInfoLoader();
@@ -235,6 +243,16 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                         .setTitleRes(R.string.advanced_battery_title)
                         .launch();
             return true;
+        } else if (KEY_BATTERY_TEMP.equals(preference.getKey())) {
+            if (batteryTemp) {
+                mBatteryTemp.setSubtitle(
+                    StagUtils.batteryTemperature(getContext(), false));
+                batteryTemp = false;
+            } else {
+                mBatteryTemp.setSubtitle(
+                    StagUtils.batteryTemperature(getContext(), true));
+                batteryTemp = true;
+            }
         }
         return super.onPreferenceTreeClick(preference);
     }
@@ -314,6 +332,9 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         updateLastFullChargePreference();
         mScreenUsagePref.setSummary(StringUtil.formatElapsedTime(getContext(),
                 mBatteryUtils.calculateScreenUsageTime(mStatsHelper), false));
+        mBatteryTemp.setSubtitle(
+                StagUtils.batteryTemperature(getContext(), batteryTemp));
+
     }
 
     @VisibleForTesting
