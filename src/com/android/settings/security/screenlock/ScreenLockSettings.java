@@ -81,7 +81,6 @@ public class ScreenLockSettings extends DashboardFragment
                 context, MY_USER_ID, lockPatternUtils));
         controllers.add(new QuickUnlockPreferenceController(
                 context, MY_USER_ID, lockPatternUtils));
-        controllers.add(new ScreenOffFodPreferenceController(context));
         controllers.add(new OwnerInfoPreferenceController(context, parent));
         controllers.add(new ScramblePinPreferenceController(
                 context, MY_USER_ID, lockPatternUtils));
