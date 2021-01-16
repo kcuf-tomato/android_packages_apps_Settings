@@ -76,7 +76,7 @@ public class CustomOverlayPreferenceController extends DeveloperOptionsPreferenc
     /* Define custom app target packages here */
     private static final List<String> CUSTOM_APP_TARGET_PACKAGES = Arrays.asList
     (
-        "org.lineageos.updater"
+        "com.stag.updater"
     );
 
     private static final Comparator<OverlayInfo> OVERLAY_INFO_COMPARATOR =
