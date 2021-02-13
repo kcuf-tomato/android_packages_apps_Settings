@@ -22,6 +22,8 @@
     <string name="stag_build_type">Build status</string>
     <string name="stag_device">Device</string>
 
+    <string name="stag_maintainer">Maintainer</string>
+
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Screen refresh rate</string>
     <string name="refresh_rate_auto">Automatic</string>
