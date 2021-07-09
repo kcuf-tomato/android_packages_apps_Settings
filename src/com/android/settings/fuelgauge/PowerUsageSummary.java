@@ -30,6 +30,7 @@ import android.os.Handler;
 import android.provider.Settings.Global;
 import android.text.format.Formatter;
 import android.os.UserHandle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
