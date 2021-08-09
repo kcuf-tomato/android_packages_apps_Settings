@@ -35,9 +35,6 @@
     <!-- Device specific doze package -->
     <string name="config_customDozePackage" translatable="false"></string>
 
-    <!-- Screen off FOD -->
-    <bool name="config_supportScreenOffFod">false</bool>
-
     <!-- Smart Charging -->
     <bool name="config_supportSmartCharging">false</bool>
 
