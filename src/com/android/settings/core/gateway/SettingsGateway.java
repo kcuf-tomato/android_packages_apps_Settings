@@ -166,7 +166,6 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.stag.horns.Horns;
 import com.stag.horns.fragments.SmartPixels;
-import com.stag.horns.fragments.GamingMode;
 import com.stag.horns.fragments.GlobalActionsSettings;
 
 public class SettingsGateway {
@@ -322,7 +321,6 @@ public class SettingsGateway {
             MediaControlsSettings.class.getName(),
             Horns.class.getName(),
             SmartPixels.class.getName(),
-            GamingMode.class.getName(),
             GlobalActionsSettings.class.getName(),
             LiveDisplaySettings.class.getName()
     };
@@ -366,7 +364,6 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             Settings.HornsActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
-            Settings.GamingModeActivity.class.getName(),
             Settings.GlobalActionsSettingsActivity.class.getName(),
     };
 }
